@@ -1,0 +1,43 @@
+.map-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 24px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.korea-svg {
+  width: 100%;
+  height: auto;
+  drop-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.region-group {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.region-group:hover {
+  transform: translateY(-2px);
+}
+
+.region-group.selected {
+  transform: translateY(-4px);
+}
+
+.region-shape {
+  transition: all 0.3s ease;
+}
+
+.region-text {
+  pointer-events: none;
+  font-family: inherit;
+  transition: fill 0.3s ease;
+}

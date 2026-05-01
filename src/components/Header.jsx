@@ -17,6 +17,7 @@ export default function Header() {
             <li><Link href="#business" className="nav-link">사업소개</Link></li>
             <li><Link href="#notice" className="nav-link">알림마당</Link></li>
             <li><Link href="#support" className="nav-link">후원참여</Link></li>
+            <li><Link href="/partners" className="nav-link">제휴업체</Link></li>
           </ul>
         </nav>
 
