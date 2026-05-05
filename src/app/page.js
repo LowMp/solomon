@@ -33,23 +33,51 @@ export default function Home() {
           <div className={styles.businessGrid}>
             <div className={styles.businessCard}>
               <div className={styles.iconWrapper}>🧒</div>
-              <h3>아동/청소년 복지</h3>
+              <h3>아동·청소년 복지</h3>
               <p>아이들이 밝고 건강하게 자랄 수 있도록 교육 및 생활 지원을 아끼지 않습니다.</p>
+              <ul style={{ textAlign: 'left', marginTop: '16px', fontSize: '0.9rem', color: 'var(--text-light)', paddingLeft: '20px', lineHeight: '1.6' }}>
+                <li>청소년 장학금 지원</li>
+                <li>한부모 가정 지원</li>
+                <li>소년·소녀가장 지원</li>
+                <li>학원비 등 생계지원(소상공인 연계)</li>
+              </ul>
             </div>
             <div className={styles.businessCard}>
               <div className={styles.iconWrapper}>👵</div>
               <h3>노인 복지</h3>
-              <p>어르신들의 편안하고 활기찬 노후를 위해 맞춤형 돌봄 서비스를 제공합니다.</p>
+              <p>만 60세 이상 무직자분들의 활기찬 노후를 위해 맞춤형 돌봄 서비스를 제공합니다.</p>
+              <ul style={{ textAlign: 'left', marginTop: '16px', fontSize: '0.9rem', color: 'var(--text-light)', paddingLeft: '20px', lineHeight: '1.6' }}>
+                <li>생계비 지원</li>
+                <li>의료비 지원<br/>(치과, 내과, 외과, 안과, 이비인후과, 요양병원 및 기타)</li>
+                <li>요양비 지원</li>
+              </ul>
             </div>
             <div className={styles.businessCard}>
               <div className={styles.iconWrapper}>🤝</div>
               <h3>장애인 복지</h3>
-              <p>장애인의 자립과 사회 참여를 돕기 위한 다양한 지원 프로그램을 운영합니다.</p>
+              <p>장애인의 자립과 사회 참여를 돕기 위한 다양한 복지지원 프로그램을 운영합니다.</p>
+              <ul style={{ textAlign: 'left', marginTop: '16px', fontSize: '0.9rem', color: 'var(--text-light)', paddingLeft: '20px', lineHeight: '1.6' }}>
+                <li>산소 발생기 사용료 지원</li>
+                <li>양압기 사용료 지원</li>
+                <li>병원 진료비 지원</li>
+                <li>보청기 구입비 지원(20~50만원)</li>
+                <li>인공와우 구입비 지원(100~300만원)</li>
+                <li>신장투석 비용 지원(회당 5~15만원)</li>
+              </ul>
             </div>
             <div className={styles.businessCard}>
-              <div className={styles.iconWrapper}>🏘️</div>
-              <h3>지역사회 복지</h3>
-              <p>지역 주민들의 삶의 질 향상을 위해 지역 맞춤형 복지 사업을 전개합니다.</p>
+              <div className={styles.iconWrapper}>🏪</div>
+              <h3>소상공인 연계복지</h3>
+              <p>지역 주민들의 삶의 질 향상을 위하여 지역 맞춤형 소상공인 연계 복지 할인 사업을 전개합니다.</p>
+              <ul style={{ textAlign: 'left', marginTop: '16px', fontSize: '0.9rem', color: 'var(--text-light)', paddingLeft: '20px', lineHeight: '1.6' }}>
+                <li>안경원</li>
+                <li>애완용품점</li>
+                <li>동물병원</li>
+                <li>식당, 식료품점</li>
+                <li>카페</li>
+                <li>약국</li>
+                <li>각종 소상공인 참여</li>
+              </ul>
             </div>
           </div>
         </div>
