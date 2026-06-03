@@ -15,19 +15,21 @@
   animation: popupFadeIn 0.3s ease-out;
 }
 
-.popup-content {
-  background: linear-gradient(145deg, #16365c 0%, #0d223c 100%);
+.popup-content.image-type {
+  background: #0d223c;
   border: 1px solid rgba(191, 161, 95, 0.4);
-  border-top: 5px solid #bfa15f;
+  border-top: 4px solid #bfa15f;
   border-radius: 12px;
   width: 90%;
-  max-width: 500px;
-  padding: 35px 30px 25px 30px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(191, 161, 95, 0.1);
-  color: #f5f7fa;
+  max-width: 440px; /* Reduced width to display whole poster without scroll */
+  padding: 0;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(191, 161, 95, 0.15);
+  overflow: hidden;
   position: relative;
-  font-family: 'Inter', 'Noto Serif KR', sans-serif;
   animation: popupSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  max-height: 92vh; /* Limit entire modal height relative to viewport */
 }
 
 @keyframes popupFadeIn {
@@ -46,133 +48,23 @@
   }
 }
 
-.popup-header {
-  text-align: center;
-  margin-bottom: 24px;
-}
-
-.popup-badge {
-  display: inline-block;
-  background-color: rgba(191, 161, 95, 0.15);
-  color: #e5c478;
-  border: 1px solid rgba(191, 161, 95, 0.3);
-  padding: 4px 12px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  border-radius: 20px;
-  margin-bottom: 12px;
-  letter-spacing: 0.5px;
-}
-
-.popup-header h2 {
-  font-family: 'Noto Serif KR', serif;
-  font-size: 1.6rem;
-  color: #ffffff;
-  margin: 0 0 12px 0;
-  line-height: 1.35;
-  font-weight: 700;
-  word-break: keep-all;
-}
-
-.popup-divider {
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #bfa15f, transparent);
-  width: 80%;
-  margin: 0 auto;
-}
-
-.popup-body {
-  margin-bottom: 24px;
-}
-
-.popup-intro {
-  font-size: 0.92rem;
-  line-height: 1.6;
-  text-align: center;
-  color: #d1dbe5;
-  margin-bottom: 24px;
-  word-break: keep-all;
-}
-
-.popup-section {
-  margin-bottom: 20px;
-}
-
-.popup-section:last-child {
-  margin-bottom: 0;
-}
-
-.section-title {
-  font-size: 0.85rem;
-  color: #bfa15f;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin: 0 0 8px 0;
-  border-left: 3px solid #bfa15f;
-  padding-left: 8px;
-  font-weight: 700;
-}
-
-.section-text {
-  font-size: 0.9rem;
-  line-height: 1.6;
-  color: #e2e8f0;
-  margin: 0;
-  word-break: keep-all;
-}
-
-.text-muted {
-  font-size: 0.8rem;
-  color: #a0aec0;
-  display: inline-block;
-  margin-top: 4px;
-}
-
-/* Table styling */
-.table-responsive {
+.popup-image-container {
   width: 100%;
-  overflow-x: auto;
-  margin: 12px 0;
-  border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  flex: 1;
+  min-height: 0;
+  overflow: hidden; /* Prevent scrollbars completely */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0d223c;
 }
 
-.popup-table {
+.popup-main-image {
   width: 100%;
-  border-collapse: collapse;
-  font-size: 0.88rem;
-  text-align: left;
-}
-
-.popup-table th, 
-.popup-table td {
-  padding: 10px 14px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.popup-table th {
-  background-color: rgba(255, 255, 255, 0.04);
-  color: #bfa15f;
-  font-weight: 600;
-}
-
-.popup-table tr:last-child td {
-  border-bottom: none;
-}
-
-.popup-table td strong {
-  color: #ffffff;
-}
-
-.highlight-gold {
-  color: #e5c478;
-  font-weight: 600;
-}
-
-.highlight-gold-bg {
-  background-color: rgba(191, 161, 95, 0.12);
-  color: #ffd885;
-  font-weight: 700;
+  height: auto;
+  max-height: 75vh; /* Keep image responsive to screen height */
+  object-fit: contain;
+  display: block;
 }
 
 /* Footer & Checkbox Styling */
@@ -180,25 +72,28 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 20px;
-  margin-top: 20px;
+  background-color: #0c1e36;
+  padding: 16px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
 }
 
+/* Brightened text and checkbox for visibility */
 .checkbox-container {
   display: flex;
   align-items: center;
   position: relative;
   padding-left: 26px;
   cursor: pointer;
-  font-size: 0.82rem;
-  color: #a0aec0;
+  font-size: 0.85rem;
+  color: #ffffff; /* Bright white text */
+  font-weight: 500;
   user-select: none;
   transition: color 0.2s ease;
 }
 
 .checkbox-container:hover {
-  color: #e2e8f0;
+  color: #ffd885; /* Soft gold on hover */
 }
 
 .checkbox-container input {
@@ -216,8 +111,8 @@
   transform: translateY(-50%);
   height: 16px;
   width: 16px;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Brighter border */
   border-radius: 3px;
   transition: all 0.2s ease;
 }
@@ -254,10 +149,10 @@
 .popup-close-btn {
   background-color: transparent;
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Brighter border */
   padding: 6px 20px;
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -267,15 +162,15 @@
   background-color: #ffffff;
   color: #16365c;
   border-color: #ffffff;
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
 }
 
 @media (max-width: 480px) {
-  .popup-content {
-    padding: 25px 20px 20px 20px;
+  .popup-content.image-type {
+    max-height: 95vh;
   }
-  .popup-header h2 {
-    font-size: 1.35rem;
+  .popup-main-image {
+    max-height: 65vh;
   }
   .popup-footer {
     flex-direction: column;
