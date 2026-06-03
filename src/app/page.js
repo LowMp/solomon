@@ -45,10 +45,10 @@ export default function Home() {
             <div className={styles.businessCard}>
               <div className={styles.iconWrapper}>👵</div>
               <h3>노인 복지</h3>
-              <p>만 60세 이상 무직자분들의 활기찬 노후를 위해 맞춤형 돌봄 서비스를 제공합니다.</p>
+              <p>만 60세 이상 무직자분들의 활기찬 노후를 위해 맞춤형 서비스를 제공합니다.</p>
               <ul style={{ textAlign: 'left', marginTop: '16px', fontSize: '0.9rem', color: 'var(--text-light)', paddingLeft: '20px', lineHeight: '1.6' }}>
                 <li>생계비 지원</li>
-                <li>의료비 지원<br/>(치과, 내과, 외과, 안과, 이비인후과, 요양병원 및 기타)</li>
+                <li>의료비 지원<br />(치과, 내과, 외과, 안과, 이비인후과, 요양병원 및 기타)</li>
                 <li>요양비 지원</li>
               </ul>
             </div>
@@ -60,23 +60,26 @@ export default function Home() {
                 <li>산소 발생기 사용료 지원</li>
                 <li>양압기 사용료 지원</li>
                 <li>병원 진료비 지원</li>
-                <li>보청기 구입비 지원(20~50만원)</li>
-                <li>인공와우 구입비 지원(100~300만원)</li>
-                <li>신장투석 비용 지원(회당 5~15만원)</li>
+                <li>보청기 구입비 지원</li>
+                <li>인공와우 구입비 지원</li>
               </ul>
             </div>
             <div className={styles.businessCard}>
               <div className={styles.iconWrapper}>🏪</div>
-              <h3>소상공인 연계복지</h3>
+              <h3>소상공 및 복지기관 연계복지</h3>
               <p>지역 주민들의 삶의 질 향상을 위하여 지역 맞춤형 소상공인 연계 복지 할인 사업을 전개합니다.</p>
               <ul style={{ textAlign: 'left', marginTop: '16px', fontSize: '0.9rem', color: 'var(--text-light)', paddingLeft: '20px', lineHeight: '1.6' }}>
+                <li>보청기</li>
+                <li>미용실</li>
                 <li>안경원</li>
                 <li>애완용품점</li>
                 <li>동물병원</li>
-                <li>식당, 식료품점</li>
+                <li>식당,식료품점</li>
                 <li>카페</li>
                 <li>약국</li>
                 <li>각종 소상공인 참여</li>
+                <li>요양원</li>
+                <li>요양병원</li>
               </ul>
             </div>
           </div>
@@ -119,7 +122,7 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            
+
             <div className={styles.noticeBox}>
               <div className={styles.noticeHeader}>
                 <h3>활동 갤러리</h3>
@@ -151,7 +154,7 @@ export default function Home() {
             </p>
             <div className={styles.supportActions}>
               <button className="btn btn-primary btn-large">정기 후원하기</button>
-              <button className="btn btn-outline btn-large" style={{borderColor: 'white', color: 'white'}}>일시 후원하기</button>
+              <button className="btn btn-outline btn-large" style={{ borderColor: 'white', color: 'white' }}>일시 후원하기</button>
             </div>
           </div>
         </div>
