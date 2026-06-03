@@ -1,10 +1,12 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import Link from "next/link";
+import WelfarePopup from "@/components/WelfarePopup";
 
 export default function Home() {
   return (
     <div className={styles.main}>
+      <WelfarePopup />
       {/* Hero Banner Section */}
       <section className={styles.hero}>
         <div className="container">
