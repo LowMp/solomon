@@ -8,7 +8,7 @@
   padding: 2rem;
   background: rgba(255, 255, 255, 0.5);
   border-radius: 24px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
@@ -16,12 +16,11 @@
 .korea-svg {
   width: 100%;
   height: auto;
-  drop-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
 .region-group {
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.25s ease;
 }
 
 .region-group:hover {
@@ -29,15 +28,37 @@
 }
 
 .region-group.selected {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
 }
 
 .region-shape {
+  fill: #f8fafc;
+  stroke: #cbd5e1;
+  stroke-width: 1.5;
   transition: all 0.3s ease;
+}
+
+.region-group:hover .region-shape {
+  fill: var(--accent-light) !important;
+  stroke: var(--accent-color) !important;
+}
+
+.region-group.selected .region-shape {
+  fill: var(--primary-color) !important;
+  stroke: var(--primary-dark) !important;
 }
 
 .region-text {
   pointer-events: none;
-  font-family: inherit;
+  font-family: 'Noto Serif KR', serif;
+  font-weight: 700;
   transition: fill 0.3s ease;
+}
+
+.region-group:hover .region-text {
+  fill: var(--primary-color) !important;
+}
+
+.region-group.selected .region-text {
+  fill: #ffffff !important;
 }

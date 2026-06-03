@@ -4,17 +4,17 @@ import React, { useState } from 'react';
 import './KoreaMapMockup.css';
 
 const regions = [
-  { id: 'seoul', name: '서울', x: 90, y: 60, size: 25 },
-  { id: 'gyeonggi', name: '경기', x: 100, y: 110, size: 30 },
-  { id: 'gangwon', name: '강원', x: 170, y: 70, size: 35 },
-  { id: 'chungnam', name: '충남', x: 70, y: 160, size: 28 },
-  { id: 'chungbuk', name: '충북', x: 130, y: 150, size: 25 },
-  { id: 'jeonbuk', name: '전북', x: 80, y: 220, size: 28 },
-  { id: 'jeonnam', name: '전남', x: 60, y: 280, size: 32 },
-  { id: 'gyeongbuk', name: '경북', x: 180, y: 160, size: 35 },
-  { id: 'gyeongnam', name: '경남', x: 150, y: 240, size: 32 },
-  { id: 'busan', name: '부산', x: 190, y: 280, size: 22 },
-  { id: 'jeju', name: '제주', x: 40, y: 350, size: 20 },
+  { id: 'gyeonggi', name: '경기', x: 85, y: 105, path: 'M 50 40 L 110 40 L 120 70 L 120 110 L 95 120 L 75 110 L 50 90 Z' },
+  { id: 'seoul', name: '서울', x: 85, y: 75, path: 'M 72 75 A 13 13 0 1 0 98 75 A 13 13 0 1 0 72 75' },
+  { id: 'gangwon', name: '강원', x: 160, y: 90, path: 'M 110 40 L 210 40 L 210 110 L 180 150 L 140 140 L 120 110 L 120 70 Z' },
+  { id: 'chungnam', name: '충남', x: 75, y: 165, path: 'M 50 90 L 75 110 L 95 120 L 120 160 L 120 180 L 90 210 L 40 210 L 40 145 Z' },
+  { id: 'chungbuk', name: '충북', x: 135, y: 150, path: 'M 120 110 L 140 140 L 180 150 L 175 190 L 130 190 L 120 160 L 95 120 Z' },
+  { id: 'jeonbuk', name: '전북', x: 90, y: 225, path: 'M 40 210 L 90 210 L 120 180 L 130 190 L 145 220 L 135 250 L 45 250 Z' },
+  { id: 'jeonnam', name: '전남', x: 85, y: 290, path: 'M 45 250 L 135 250 L 140 290 L 115 330 L 40 330 Z' },
+  { id: 'gyeongbuk', name: '경북', x: 185, y: 180, path: 'M 180 150 L 210 110 L 230 180 L 230 240 L 190 240 L 175 190 Z' },
+  { id: 'gyeongnam', name: '경남', x: 160, y: 260, path: 'M 175 190 L 190 240 L 190 275 L 140 290 L 135 250 L 145 220 Z' },
+  { id: 'busan', name: '부산', x: 205, y: 260, path: 'M 190 240 L 220 240 L 220 270 L 190 275 Z' },
+  { id: 'jeju', name: '제주', x: 90, y: 360, path: 'M 65 360 A 25 13 0 1 0 115 360 A 25 13 0 1 0 65 360' },
 ];
 
 export default function KoreaMapMockup({ onRegionSelect, selectedRegion }) {
@@ -29,36 +29,25 @@ export default function KoreaMapMockup({ onRegionSelect, selectedRegion }) {
             <feComposite in="SourceGraphic" in2="blur" operator="over" />
           </filter>
         </defs>
-        
-        {/* Connecting lines for aesthetic network effect */}
-        <path 
-          d="M90 60 L100 110 L170 70 M100 110 L130 150 L180 160 L170 70 M100 110 L70 160 L80 220 L150 240 L180 160 M80 220 L60 280 M150 240 L190 280" 
-          stroke="#e2e8f0" 
-          strokeWidth="2" 
-          fill="none" 
-          strokeDasharray="4 4"
-        />
 
         {regions.map((region) => {
           const isSelected = selectedRegion === region.id;
           const isHovered = hoveredRegion === region.id;
-          
+
           return (
-            <g 
+            <g
               key={region.id}
               className={`region-group ${isSelected ? 'selected' : ''}`}
               onMouseEnter={() => setHoveredRegion(region.id)}
               onMouseLeave={() => setHoveredRegion(null)}
               onClick={() => onRegionSelect(region.id, region.name)}
             >
-              <circle
-                cx={region.x}
-                cy={region.y}
-                r={region.size}
+              <path
+                d={region.path}
                 className="region-shape"
-                fill={isSelected ? '#3b82f6' : isHovered ? '#93c5fd' : '#f8fafc'}
-                stroke={isSelected ? '#2563eb' : isHovered ? '#60a5fa' : '#cbd5e1'}
-                strokeWidth="2"
+                fill={isSelected ? 'var(--primary-color)' : isHovered ? 'var(--accent-light)' : '#f8fafc'}
+                stroke={isSelected ? 'var(--primary-dark)' : isHovered ? 'var(--accent-color)' : '#cbd5e1'}
+                strokeWidth="1.5"
                 filter={isHovered || isSelected ? 'url(#glow)' : ''}
               />
               <text
@@ -67,7 +56,7 @@ export default function KoreaMapMockup({ onRegionSelect, selectedRegion }) {
                 textAnchor="middle"
                 alignmentBaseline="middle"
                 fill={isSelected ? '#ffffff' : '#334155'}
-                fontSize="12"
+                fontSize="11"
                 fontWeight="700"
                 className="region-text"
               >
